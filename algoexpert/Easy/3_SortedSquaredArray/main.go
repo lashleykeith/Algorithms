@@ -1,5 +1,5 @@
 //Solution 1
-
+// O(nlogn) time | O(n)space
 package main
 
 import (
@@ -18,6 +18,7 @@ func SortedSquaredArray(array []int) []int {
 }
 
 //Solution 2
+// O(n) time | O(n)space
 package main
 
 
