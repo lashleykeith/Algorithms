@@ -19,6 +19,7 @@ Here are the list of questions from AlgoExpert
 
 ## 4 Tournament Winner
 
+![Screenshot_4](https://user-images.githubusercontent.com/21030885/220954327-71614904-6ad6-4aaf-9354-7e65be0dd1d6.png)
 
 
 
