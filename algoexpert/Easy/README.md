@@ -19,8 +19,7 @@ Here are the list of questions from AlgoExpert
 
 ## 4 Tournament Winner
 
-![Screenshot_4](https://user-images.githubusercontent.com/21030885/220954327-71614904-6ad6-4aaf-9354-7e65be0dd1d6.png)
-
+![Screenshot_4](https://user-images.githubusercontent.com/21030885/220955216-6f940cd8-d44e-4870-b262-c704446d4352.png)
 
 
 ## 5 Non-Constructible Change
