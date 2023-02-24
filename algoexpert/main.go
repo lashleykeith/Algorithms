@@ -1,32 +1,29 @@
-// O(n) time | O(k) space
-
+// # O(nlogn) time | O(1) space
 package main
 
-const HOME_TEAM_WON = 1
+import (
+    "sort"
+)
 
-func updateScores(team string, points int, scores map[string]int){
-    scores[team] += points
-}
+func NonConstructibleChange(coins []int) int{
+    sort.Ints(coins)
 
-func TournamentWinner(competitions [][]string, results []int) string{
-    currentBestTeam := ""
-    scores := make(map[string]int)
+    currentChangeCreated := 0
 
-    for idx, competition := range competitions {
-        result := results[idx]
-        homeTeam, awayTeam := competition[0], competition[1]
-
-        winningTeam := awayTeam
-
-        if result == HOME_TEAM_WON{
-            winningTeam = homeTeam
+    for _, coin := range coins{
+        if coin > currentChangeCreated + 1 {
+            return currentChangeCreated + 1
         }
-
-        updateScores(winningTeam, 3, scores)
-
-        if scores[winningTeam] > scores[currentBestTeam]{
-            currentBestTeam = winningTeam
-        }
+        currentChangeCreated += coin
     }
-    return currentBestTeam
+    return currentChangeCreated + 1
 }
+
+
+/* 
+
+this is the array of the value of coins we have
+coins = [5,7,1,1,2,3,22]
+
+We need to print the minimal amount that we can not create in the resulting variable currentChangeCreated with the following code.
+ */

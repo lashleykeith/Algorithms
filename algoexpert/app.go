@@ -1,45 +1,25 @@
-// O(n) time | O(k) space
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "sort"
+)
 
-const HOME_TEAM_WON = 1
+func NonConstructibleChange(coins []int) int{
+    sort.Ints(coins)
+
+    currentChangeCreated := 0
+
+    for _, coin := range coins{
+        if coin > currentChangeCreated + 1 {
+            return currentChangeCreated + 1
+        }
+        currentChangeCreated += coin
+    }
+    return currentChangeCreated + 1
+}
 
 func main() {
-    competitions := [][]string{
-        {"HTML", "C#"},
-        {"C#", "Python"},
-        {"Python", "HTML"},
-    }
-    results := []int{0, 0, 1}
-
-    winner := TournamentWinner(competitions, results)
-    fmt.Println("Tournament Winner:", winner)
-}
-
-func TournamentWinner(competitions [][]string, results []int) string {
-    currentBestTeam := ""
-    scores := map[string]int{currentBestTeam: 0}
-
-    for idx, competition := range competitions {
-        result := results[idx]
-        homeTeam, awayTeam := competition[0], competition[1]
-
-        winningTeam := awayTeam
-        if result == HOME_TEAM_WON {
-            winningTeam = homeTeam
-        }
-
-        updateScores(winningTeam, 3, scores)
-
-        if scores[winningTeam] > scores[currentBestTeam] {
-            currentBestTeam = winningTeam
-        }
-    }
-
-    return currentBestTeam
-}
-
-func updateScores(team string, points int, scores map[string]int) {
-    scores[team] += points
+    coins := []int{5,7,1,1,2,3,22}
+    fmt.Println(NonConstructibleChange(coins)) // Output: 21
 }
