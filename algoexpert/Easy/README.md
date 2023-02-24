@@ -71,3 +71,49 @@ Here are the list of questions from AlgoExpert
 
 
 ## 16 Binary Search
+
+
+
+## 17 Find Three Largest Numbers
+
+
+
+
+## 18 Bubble Sort
+
+
+
+## 19 Insertion Sort
+
+
+
+## 20 Selection Sort
+
+
+
+
+## 21 Palindrome Check
+
+
+
+## 22 Caesar Cipher Encryptor
+
+
+
+## 23 Run-Length Encoding
+
+
+
+## 24 Generate Document
+
+
+
+
+## 25 First Non-Repeating Character
+
+
+
+## 26 Semornilap
+
+
+
