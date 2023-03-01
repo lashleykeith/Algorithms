@@ -28,6 +28,7 @@ Here are the list of questions from AlgoExpert
 
 
 ## 6 Find Closest Value In BST
+![Screenshot_6](https://user-images.githubusercontent.com/21030885/222065460-c5f07e38-2f87-466e-8dd1-e140ab155d88.png)
 
 
 
