@@ -1,37 +1,32 @@
-// Solution 2
-// Average: O(log(n)) time | O(1) space
-// Worst: O(n) time | O(1) spacepackage main
+// Solution 1
+// Average: O(log(n)) time | O(log(n)) space
+// Worst: O(n) time | O(n) space
 package main
 
-import "fmt"
-
-type BST struct {
+type BST struct{
     Value int
-    Left  *BST
+
+    Left *BST
     Right *BST
 }
 
-func (tree *BST) FindClosestValue(target int) int {
+func (tree *BST) FindClosestValue(target int) int{
     return tree.findClosestValue(target, tree.Value)
 }
 
-func (tree *BST) findClosestValue(target, closest int) int {
-    if tree == nil {
-        return closest
-    }
-    if absdiff(target, closest) > absdiff(target, tree.Value) {
+func (tree *BST) findClosestValue(target, closest int) int{
+    if absdiff(target, closest) > absdiff(target, tree.Value){
         closest = tree.Value
     }
-    if target < tree.Value {
+    if target < tree.Value && tree.Left != nil{
         return tree.Left.findClosestValue(target, closest)
-    } else if target > tree.Value {
+    } else if target > tree.Value && tree.Right != nil{
         return tree.Right.findClosestValue(target, closest)
-    } else {
-        return closest
     }
+    return closest
 }
 
-func absdiff(a, b int) int {
+func absdiff(a, b int) int{
     if a > b {
         return a - b
     }
@@ -39,40 +34,63 @@ func absdiff(a, b int) int {
 }
 
 
+// Solution 2
+// Average: O(log(n)) time | O(1) space
+// Worst: O(n) time | O(1) space
 
-func main() {
-    bst := &BST{
-        Value: 10,
-        Left: &BST{
-            Value: 5,
-            Left: &BST{
-                Value: 2,
-                Left: &BST{
-                    Value: 1,
-                },
-            },
-            Right: &BST{
-                Value: 5,
-                Right: &BST{
-                    Value: 5,
-                },
-            },
-        },
-        Right: &BST{
-            Value: 15,
-            Left: &BST{
-                Value: 13,
-                Right: &BST{
-                    Value: 14,
-                },
-            },
-            Right: &BST{
-                Value: 22,
-            },
-        },
-    }
+package main
 
-    target := 12
-    closest := bst.FindClosestValue(target)
-    fmt.Println(closest)
+type BST struct{
+    Value int
+
+    Left *BST
+    Right *BST
 }
+
+func(tree *BST) FindClosestValue(target int) int {
+    return tree.findClosestValue(target, tree.Value)
+}
+
+func (tree *BST) findClosestValue(target, closest int) int{
+    currentnode := tree
+    for currentnode != nil{
+        if absdiff(target, closest) > absdiff(target, currentnode.Value){
+            closest = currentnode.Value
+        }
+        if target < currentnode.Value{
+            currentnode = currentnode.Left
+        } else if target > currentnode.Value{
+            currentnode = currentnode.Right
+        } else {
+            break
+        }
+    }
+    return closest
+}
+
+func absdiff(a, b int) int{
+    if a > b {
+        return a - b
+    }
+    return b - a
+}
+
+/*
+{
+  "tree": {
+    "nodes": [
+      {"id": "10", "left": "5", "right": "15", "value": 10},
+      {"id": "15", "left": "13", "right": "22", "value": 15},
+      {"id": "22", "left": null, "right": null, "value": 22},
+      {"id": "13", "left": null, "right": "14", "value": 13},
+      {"id": "14", "left": null, "right": null, "value": 14},
+      {"id": "5", "left": "2", "right": "5-2", "value": 5},
+      {"id": "5-2", "left": null, "right": null, "value": 5},
+      {"id": "2", "left": "1", "right": null, "value": 2},
+      {"id": "1", "left": null, "right": null, "value": 1}
+    ],
+    "root": "10"
+  },
+  "target": 12
+}
+*/
