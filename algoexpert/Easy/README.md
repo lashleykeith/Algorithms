@@ -34,6 +34,7 @@ Here are the list of questions from AlgoExpert
 
 ## 7 Branch Sums
 
+![Screenshot_7](https://user-images.githubusercontent.com/21030885/222356478-8f789df1-f4b3-4f6d-b41a-910666418744.png)
 
 
 ## 8 Node Depths
