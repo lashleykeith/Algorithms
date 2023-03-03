@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func TwoNumberSum( array []int, target int) []int{
+func TwoNumberSum(array []int, target int) []int{
 	for i := 0; i < len(array)-1; i++{
 		firstNum := array[i]
-		for j := 0; j < len(array); j++{
+		for j := i + 1; j < len(array); j++{
 			secondNum := array[j]
 			if firstNum + secondNum == target{
 				return []int{firstNum, secondNum}
@@ -15,12 +15,23 @@ func TwoNumberSum( array []int, target int) []int{
 	return []int{}
 }
 
+
 func main(){
 
 	arr := []int{-3, 4, 5, 3, 7, 8, 3, 2}
-	targetSum := 10
 
-	result := TwoNumberSum{arr, targetSum}
+	targetNum := 10
+
+	result := TwoNumberSum(arr, targetNum)
+
+	if len(result) == 2 {
+		fmt.Printf("The two numbers that add up to %d are %d and %d\n", targetNum, result[0], result[1])
+
+	} else {
+		fmt.Printf("No two numbers in the array add up to %d\n", targetNum)
+
+	}
+
 }
 
 // TwoNumberSum
@@ -44,4 +55,10 @@ make an array -3, 4, 5, 3, 7, 8, 3, 2 arr
 give this a target of 10 targetSum
 
 place the result
+
+check if the length of the filtered result is 2
+
+fmt.Printf("The two numbers that add up to %d are %d and %d\n", targetSum, result[0], result[1])
+fmt.Printf("No two numbers in the array add up to %d\n", targetSum)
+
 */
