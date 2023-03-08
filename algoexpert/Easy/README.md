@@ -47,6 +47,8 @@ Here are the list of questions from AlgoExpert
 ## 9 Depth-first Search
 
 
+![Screenshot_9](https://user-images.githubusercontent.com/21030885/223655619-5da76534-32cf-4abb-a223-3f8f5d369d9b.png)
+
 
 ## 10 Minimum Waiting Time
 
