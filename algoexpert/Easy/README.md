@@ -41,10 +41,12 @@ Here are the list of questions from AlgoExpert
 
 
 
+![Screenshot_8](https://user-images.githubusercontent.com/21030885/223656126-c217300e-1da9-437f-9458-848b12f393b6.png)
 
 
 ## 9 Depth-first Search
 
+![Screenshot_9](https://user-images.githubusercontent.com/21030885/223656135-7fa250e5-f492-452e-9175-8428164503c8.png)
 
 
 ## 10 Minimum Waiting Time
