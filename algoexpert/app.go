@@ -1,67 +1,49 @@
 package main
 
-import (
-    "fmt"
-)
+import "fmt"
 
-type BinaryTree struct {
-    Value int
-    Left *BinaryTree
-    Right *BinaryTree
+type Node struct {
+    Name     string
+    Children []*Node
 }
 
-func BranchSums(root *BinaryTree) []int{
-    sums := []int{}
-    calculateBranchSums(root, 0, &sums)
-    return sums
-}
-
-func calculateBranchSums(node *BinaryTree, runningSum int, sums* []int){
-    if node == nil{
-        return
+func (n *Node) DepthFirstSearch(array []string) []string {
+    array = append(array, n.Name)
+    for _, child := range n.Children {
+        array = child.DepthFirstSearch(array)
     }
-
-    runningSum += node.Value
-    if node.Left == nil && node.Right == nil{
-        *sums = append(*sums, runningSum)
-        return
-    }
-    calculateBranchSums(node.Left, runningSum, sums)
-    calculateBranchSums(node.Right, runningSum, sums)
+    return array
 }
 
 func main() {
-    tree := &BinaryTree{
-        Value: 1,
-        Left: &BinaryTree{
-            Value: 2,
-            Left: &BinaryTree{
-                Value: 4,
-                Left: &BinaryTree{
-                    Value: 8,
-                },
-                Right: &BinaryTree{
-                    Value: 9,
-                },
-            },
-            Right: &BinaryTree{
-                Value: 5,
-                Left: &BinaryTree{
-                    Value: 10,
-                },
-            },
-        },
-        Right: &BinaryTree{
-            Value: 3,
-            Left: &BinaryTree{
-                Value: 6,
-            },
-            Right: &BinaryTree{
-                Value: 7,
-            },
-        },
-    }
+    // define the nodes of the graph
+    A := &Node{Name: "A"}
+    B := &Node{Name: "B"}
+    C := &Node{Name: "C"}
+    D := &Node{Name: "D"}
+    E := &Node{Name: "E"}
+    F := &Node{Name: "F"}
+    G := &Node{Name: "G"}
+    H := &Node{Name: "H"}
+    I := &Node{Name: "I"}
+    J := &Node{Name: "J"}
+    K := &Node{Name: "K"}
 
-    sums := BranchSums(tree)
-    fmt.Println(sums) // Output: [15 16 18 10 11]
+    // define the connections between the nodes
+    A.Children = []*Node{B, C, D}
+    B.Children = []*Node{E, F}
+    D.Children = []*Node{G, H}
+    F.Children = []*Node{I, J}
+    G.Children = []*Node{K}
+
+    // call DepthFirstSearch on the startNode A
+    result := A.DepthFirstSearch([]string{})
+
+    // print the result in the desired order
+    expected := []string{"A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"}
+    if fmt.Sprintf("%v", result) == fmt.Sprintf("%v", expected) {
+        fmt.Println("Result matches expected output:", result)
+    } else {
+        fmt.Println("Result does not match expected output. Expected:", expected, "Actual:", result)
+    }
 }

@@ -1,31 +1,28 @@
-// Solution 1
-// O(n) time | O(h) space - where n is the number of nodes in
-// the Binary Tree and h is the height of the Binary Tree
+// O(v + e) time | O(v) space
 
 package main
 
-
-type BinaryTree struct{
-    Value            int
-    Left, Right      *BinaryTree
+type Node struct{
+    Name        string
+    Children    []*Node
 }
 
-type Level struct{
-    Root        *BinaryTree
-    Depth       int
+func (n *Node) DepthFirstSearch(array []string) []string{
+    array = append(array, n.Name)
+    for _, child := range n.Children{
+        array = child.DepthFirstSearch(array)
+    }
+    return array
 }
 
-func NodeDepths(root, *BinaryTree) int{
-    sumofDepth :=  0
-    stack := {{Root:root, Depth:0}} 
-}
 
-/*
-Make Binary Tree struct with Left and Right places
+/* 
+// We need build a struct for the name and children
 
-Make Level Struct with a Root that inherits from the Binary Tree and and can measure the Depth of our tree
+// Write the function DepthFirstSearch that points to the Node struct and creates a string array
 
-Make a function NodeDepths that has a root and points to the BinaryTree struct
+// append the Name in the array to the array we are searching the depth in
 
-We need to initialize the sum of Depths and we also want to initialize a stack.  This stack will inherit from the Level Struct and will make key-value pairs.  The Root at root and the Depth will start at 0
-*/
+// create a for loop that will look through the child of each map in the Children and will run through each child adding it.
+
+ */

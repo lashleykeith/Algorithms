@@ -40,14 +40,11 @@ Here are the list of questions from AlgoExpert
 ## 8 Node Depths
 
 
-![Screenshot_8](https://user-images.githubusercontent.com/21030885/223372038-598c4001-8e56-4741-8ad0-ada1c921e243.png)
 
 
 
 ## 9 Depth-first Search
 
-
-![Screenshot_9](https://user-images.githubusercontent.com/21030885/223655619-5da76534-32cf-4abb-a223-3f8f5d369d9b.png)
 
 
 ## 10 Minimum Waiting Time
