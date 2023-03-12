@@ -1,28 +1,32 @@
-// O(v + e) time | O(v) space
+// O(nlogn) time | O(1) space
 
 package main
 
-type Node struct{
-    Name        string
-    Children    []*Node
+import (
+    "sort"
+)
+
+
+func MinimumWaitingTime(queries []int) int{
+   sort.Ints(queries)
+
+   totalWaitingTime := 0
+   for idx, duration := range queries {
+    queriesLeft := len(queries) - (idx + 1)
+    totalWaitingTime += duration * queriesLeft
+   }
+
+   return totalWaitingTime
 }
 
-func (n *Node) DepthFirstSearch(array []string) []string{
-    array = append(array, n.Name)
-    for _, child := range n.Children{
-        array = child.DepthFirstSearch(array)
-    }
-    return array
+/*
+We need to edit this code to print out the the totalWaitingTime of this query.
+
+This is the query
+{
+  "queries": [3, 2, 1, 2, 6]
+
 }
 
-
-/* 
-// We need build a struct for the name and children
-
-// Write the function DepthFirstSearch that points to the Node struct and creates a string array
-
-// append the Name in the array to the array we are searching the depth in
-
-// create a for loop that will look through the child of each map in the Children and will run through each child adding it.
-
- */
+This is the code:
+*/
