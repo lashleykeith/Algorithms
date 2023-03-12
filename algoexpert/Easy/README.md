@@ -51,6 +51,8 @@ Here are the list of questions from AlgoExpert
 
 ## 10 Minimum Waiting Time
 
+![Screenshot_10](https://user-images.githubusercontent.com/21030885/224524451-1143f072-cca7-4892-82c6-a1f97f8cb440.png)
+
 
 
 ## 11 Class Photos
