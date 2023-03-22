@@ -16,7 +16,7 @@ type Level struct{
 
 
 func NodeDepths(root *BinaryTree) int{
-    sumOfDepths := []Levels{{Root:root, Depth:0}}
+    sumOfDepths := []Level{{Root:root, Depth:0}}
     for len(stack) > 0 {
         top, stack = stack[len(stack)-1], stack[:len(stack)-1]
         node, depth := top.Root, top.Depth
