@@ -62,6 +62,7 @@ Here are the list of questions from AlgoExpert
 
 ## 12 Tandem Bicycle
 
+![Screenshot_12](https://user-images.githubusercontent.com/21030885/229350364-c24e10a4-1d74-4198-8906-7a9a4e1ae97c.png)
 
 
 
