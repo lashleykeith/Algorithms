@@ -68,6 +68,9 @@ Here are the list of questions from AlgoExpert
 
 ## 13 Remove Duplicates From Linked List
 
+![Screenshot_2](https://github.com/lashleykeith/Algorithms-Golang-vs-Python/assets/21030885/ec1e197e-3a3e-4e86-a5e0-35e512626f33)
+
+
 
 
 ## 14 Nth Fibonacci
