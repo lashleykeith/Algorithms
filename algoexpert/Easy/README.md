@@ -72,16 +72,20 @@ Here are the list of questions from AlgoExpert
 
 
 
+## 14 Middle Node
 
-## 14 Nth Fibonacci
-
-
-
-## 15 Product Sum
+![Screenshot_3](https://github.com/lashleykeith/Algorithms-Golang-vs-Python/assets/21030885/dda96aaf-8e5d-4372-a789-438a342d5dff)
 
 
+## 15 Nth Fibonacci
 
-## 16 Binary Search
+
+
+## 16 Product Sum
+
+
+
+## 17 Binary Search
 
 
 
