@@ -84,6 +84,7 @@ Here are the list of questions from AlgoExpert
 
 ## 16 Product Sum
 
+![Screenshot_17](https://github.com/lashleykeith/Algorithms-Golang-vs-Python/assets/21030885/3b2e3119-6f96-40fe-b355-728daa75ece7)
 
 
 ## 17 Binary Search
