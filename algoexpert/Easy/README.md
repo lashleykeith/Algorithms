@@ -88,6 +88,7 @@ Here are the list of questions from AlgoExpert
 
 
 ## 17 Binary Search
+![Screen Shot 2024-01-26 at 2 41 52 PM](https://github.com/lashleykeith/Algorithms-Golang-vs-Python/assets/21030885/d2d2c276-8198-48e6-961a-56849852a3e9)
 
 
 
